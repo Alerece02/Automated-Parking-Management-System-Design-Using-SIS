@@ -1,0 +1,174 @@
+.model datapath
+.inputs AS1 AS2 AS3 SEC1 SEC0 IN_O OUT_O L IN OUT SETTORE_A SETTORE_B \
+SETTORE_C
+.outputs ERROR SBARRA_IN SBARRA_OUT SEC_A SEC_B SEC_C
+.latch    O4_MUX_A O4_REG_A re NIL 0
+.latch    O3_MUX_A O3_REG_A re NIL 0
+.latch    O2_MUX_A O2_REG_A re NIL 0
+.latch    O1_MUX_A O1_REG_A re NIL 0
+.latch    O0_MUX_A O0_REG_A re NIL 0
+.latch    O4_MUX_B O4_REG_B re NIL 0
+.latch    O3_MUX_B O3_REG_B re NIL 0
+.latch    O2_MUX_B O2_REG_B re NIL 0
+.latch    O1_MUX_B O1_REG_B re NIL 0
+.latch    O0_MUX_B O0_REG_B re NIL 0
+.latch    O4_MUX_C O4_REG_C re NIL 0
+.latch    O3_MUX_C O3_REG_C re NIL 0
+.latch    O2_MUX_C O2_REG_C re NIL 0
+.latch    O1_MUX_C O1_REG_C re NIL 0
+.latch    O0_MUX_C O0_REG_C re NIL 0
+.names SEC1 SEC0 ERROR
+11 1
+.names OUT_O AND_OUT_0 SBARRA_IN
+01 1
+.names OUT_O AND_OUT_0 SBARRA_OUT
+11 1
+.names AS1 O4_MUX_A O3_MUX_A O2_MUX_A O1_MUX_A O0_MUX_A SEC_A
+111111 1
+.names AS2 O4_MUX_B O3_MUX_B O2_MUX_B O1_MUX_B O0_MUX_B SEC_B
+111111 1
+.names AS3 O4_MUX_C O3_MUX_C O2_MUX_C O1_MUX_C O0_MUX_C SEC_C
+111000 1
+.names L IN 4_MUX_4 3_MUX_3 [222] [227] [251] [256] OMUX_A
+11------ 1
+--1---1- 1
+--11-1-- 1
+0-0-0--0 1
+.names L OUT 3_MUX_3 [222] [227] [249] [251] [252] [254] OMUX_B
+11------- 1
+--1---1-- 1
+--0-10--- 1
+---1---01 1
+.names L SETTORE_A 2_MUX_2 [227] [249] [252] [254] OMUX_C
+11----- 1
+---10-- 1
+---1-0- 1
+----111 1
+0-10--0 1
+.names L SETTORE_B 1_MUX_1 [227] [247] [254] OMUX_D
+11---- 1
+--01-- 1
+--0--1 1
+0-101- 1
+.names L SETTORE_C 0_MUX_0 AND_OUT_0 OMUX_E
+11-- 1
+0-01 1
+0-10 1
+.names SEC1 SEC0 SEL_REG_A
+10 1
+.names SEC1 SEC0 SEL_REG_B
+01 1
+.names SEC1 SEC0 SEL_REG_C
+00 1
+.names SEL_REG_A O4_REG_A OMUX_A O4_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O3_REG_A OMUX_B O3_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O2_REG_A OMUX_C O2_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O1_REG_A OMUX_D O1_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O0_REG_A OMUX_E O0_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_B O4_REG_B OMUX_A O4_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O3_REG_B OMUX_B O3_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O2_REG_B OMUX_C O2_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O1_REG_B OMUX_D O1_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O0_REG_B OMUX_E O0_MUX_B
+01- 1
+1-1 1
+.names OMUX_A SEL_REG_C O4_REG_C O4_MUX_C
+11- 1
+-01 1
+.names OMUX_B SEL_REG_C O3_REG_C O3_MUX_C
+11- 1
+-01 1
+.names OMUX_C SEL_REG_C O2_REG_C [257] O2_MUX_C
+-01- 1
+1--1 1
+.names OMUX_D SEL_REG_C O1_REG_C [257] O1_MUX_C
+-01- 1
+1--1 1
+.names OMUX_E SEL_REG_C O0_REG_C [257] O0_MUX_C
+-01- 1
+1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O4_REG_A O4_REG_B O4_REG_C 4_MUX_4
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O3_REG_A O3_REG_B O3_REG_C 3_MUX_3
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O2_REG_A O2_REG_B O2_REG_C 2_MUX_2
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O1_REG_A O1_REG_B O1_REG_C 1_MUX_1
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O0_REG_A O0_REG_B O0_REG_C 0_MUX_0
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_C [250] MUX_0
+00 1
+.names IN_O OUT_O OU AND_OUT_0
+010 1
+100 1
+.names 4_MUX_4 3_MUX_3 0_MUX_0 MUX_0 [209] [210] [250] OU
+0011001 1
+0000001 1
+1111000 1
+1100000 1
+.names 2_MUX_2 MUX_0 [209]
+01 1
+10 1
+.names 1_MUX_1 MUX_0 [210]
+01 1
+10 1
+.names SBARRA_OUT 0_MUX_0 AND_OUT_0 [256] [222]
+--0- 1
+11-- 1
+0--1 1
+.names L SBARRA_OUT 0_MUX_0 [227]
+010 1
+.names SBARRA_IN 0_MUX_0 [247]
+0- 1
+-0 1
+.names 2_MUX_2 1_MUX_1 [249]
+1- 1
+-1 1
+.names OUT_O ERROR [250]
+1- 1
+-1 1
+.names L [222] [227] [249] [251]
+01-- 1
+--11 1
+.names 2_MUX_2 1_MUX_1 [252]
+0- 1
+-0 1
+.names L [247] [254]
+00 1
+.names 3_MUX_3 0_MUX_0 [252] [256]
+0-- 1
+-0- 1
+--1 1
+.names OMUX_A OMUX_B SEL_REG_C [257]
+0-1 1
+-01 1
+.end

@@ -1,0 +1,23 @@
+.model settoreC
+.inputs I4 I3 I2 I1 I0
+.outputs O4 O3 O2 O1 O0
+
+#imposto la costante e controllo il major
+.subckt one O=COSTANT_1
+.subckt zero O=COSTANT_0
+.subckt major A4=I4 A3=I3 A2=I2 A1=I1 A0=I0 B4=COSTANT_1 B3=COSTANT_1 B2=COSTANT_0 B1=COSTANT_0 B0=COSTANT_0 O=MA
+
+#mux con selezione controllo major
+.subckt mux2 S=MA A4=I4 A3=I3 A2=I2 A1=I1 A0=I0 B4=COSTANT_1 B3=COSTANT_1 B2=COSTANT_0 B1=COSTANT_0 B0=COSTANT_0 O4=O4 O3=O3 O2=O2 O1=O1 O0=O0
+
+.end
+
+#richiamo i componenti
+.search one.blif
+.search zero.blif
+.search major.blif
+.search mux2.blif
+
+
+
+

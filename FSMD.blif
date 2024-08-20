@@ -1,0 +1,221 @@
+.model FSMD
+.inputs IN OUT SETTORE_A SETTORE_B SETTORE_C
+.outputs ERROR SBARRA_IN SBARRA_OUT SEC_A SEC_B SEC_C
+.latch    LatchOut_v7 LatchOut_v5   1
+.latch    [9] LatchOut_v6   1
+.latch    [10] LatchOut_v7   1
+.latch    O4_MUX_A O4_REG_A re NIL 0
+.latch    O3_MUX_A O3_REG_A re NIL 0
+.latch    O2_MUX_A O2_REG_A re NIL 0
+.latch    O1_MUX_A O1_REG_A re NIL 0
+.latch    O0_MUX_A O0_REG_A re NIL 0
+.latch    O4_MUX_B O4_REG_B re NIL 0
+.latch    O3_MUX_B O3_REG_B re NIL 0
+.latch    O2_MUX_B O2_REG_B re NIL 0
+.latch    O1_MUX_B O1_REG_B re NIL 0
+.latch    O0_MUX_B O0_REG_B re NIL 0
+.latch    O4_MUX_C O4_REG_C re NIL 0
+.latch    O3_MUX_C O3_REG_C re NIL 0
+.latch    O2_MUX_C O2_REG_C re NIL 0
+.latch    O1_MUX_C O1_REG_C re NIL 0
+.latch    O0_MUX_C O0_REG_C re NIL 0
+.names SEC1 SEC0 ERROR
+11 1
+.names OUT_O AND_OUT_0 SBARRA_IN
+01 1
+.names OUT_O AND_OUT_0 SBARRA_OUT
+11 1
+.names SEC0 L O4_MUX_A O3_MUX_A O2_MUX_A O1_MUX_A O0_MUX_A [706] SEC_A
+1-11111- 1
+-111111- 1
+--111111 1
+.names LatchOut_v7 O4_MUX_B O3_MUX_B O2_MUX_B O1_MUX_B O0_MUX_B [685] [706] \
+SEC_B
+-111111- 1
+111111-1 1
+.names LatchOut_v7 O4_MUX_C O3_MUX_C O2_MUX_C O1_MUX_C O0_MUX_C [685] [706] \
+SEC_C
+1110001- 1
+111000-1 1
+.names SETTORE_A IN_O OUT_O LatchOut_v5 LatchOut_v7 [701] SEC1
+-11--- 1
+---10- 1
+1----1 1
+.names SETTORE_A SETTORE_B LatchOut_v5 LatchOut_v7 [684] [691] [700] SEC0
+--00--- 1
+-1---1- 1
+-----10 1
+1---01- 1
+.names IN OUT OUT_O [691] [698] IN_O
+0-1-- 1
+-1-1- 1
+--1-0 1
+.names IN OUT SETTORE_A [691] [698] OUT_O
+1--1- 1
+---10 1
+-011- 1
+.names LatchOut_v5 LatchOut_v7 L
+0- 1
+-0 1
+.names SETTORE_A SETTORE_C IN_O L LatchOut_v6 SEL_REG_C [698] [700] [9]
+0---1--- 1
+----1-1- 1
+----1--1 1
+-000-1-- 1
+.names [9] [685] [701] [10]
+1-- 1
+-1- 1
+--1 1
+.names OU [701] AND_OUT_0
+01 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O4_REG_A O4_REG_B O4_REG_C 4_MUX_4
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O3_REG_A O3_REG_B O3_REG_C 3_MUX_3
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O2_REG_A O2_REG_B O2_REG_C 2_MUX_2
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O1_REG_A O1_REG_B O1_REG_C 1_MUX_1
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names SEL_REG_A SEL_REG_B SEL_REG_C O0_REG_A O0_REG_B O0_REG_C 0_MUX_0
+1--1-- 1
+-1--1- 1
+--1--1 1
+.names IN OUT_O L 4_MUX_4 [663] [689] [697] [704] OMUX_A
+1-1----- 1
+--011--- 1
+-1-1--1- 1
+---0-0-0 1
+.names OUT SBARRA_OUT L 3_MUX_3 [663] [687] [689] [694] [697] OMUX_B
+1-1------ 1
+-1------0 1
+--011---- 1
+-1-1-1--- 1
+----1-00- 1
+.names SETTORE_A SBARRA_OUT L 2_MUX_2 1_MUX_1 0_MUX_0 [687] [689] [694] OMUX_C
+1-1------ 1
+-1----0-- 1
+---01--0- 1
+--0----10 1
+--0101--- 1
+-001-0--- 1
+.names SETTORE_B SBARRA_OUT L 1_MUX_1 0_MUX_0 [686] [689] OMUX_D
+1-1---- 1
+-1---0- 1
+---0--0 1
+-1-11-- 1
+-001--1 1
+.names SETTORE_C L AND_OUT_0 0_MUX_0 OMUX_E
+11-- 1
+--10 1
+-001 1
+.names SEC1 SEC0 SEL_REG_A
+10 1
+.names SEC1 SEC0 SEL_REG_B
+01 1
+.names SEC1 SEC0 SEL_REG_C
+00 1
+.names SEL_REG_A O4_REG_A OMUX_A O4_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O3_REG_A OMUX_B O3_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O2_REG_A OMUX_C O2_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O1_REG_A OMUX_D O1_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_A O0_REG_A OMUX_E O0_MUX_A
+01- 1
+1-1 1
+.names SEL_REG_B O4_REG_B OMUX_A O4_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O3_REG_B OMUX_B O3_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O2_REG_B OMUX_C O2_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O1_REG_B OMUX_D O1_MUX_B
+01- 1
+1-1 1
+.names SEL_REG_B O0_REG_B OMUX_E O0_MUX_B
+01- 1
+1-1 1
+.names OMUX_A SEL_REG_C O4_REG_C O4_MUX_C
+11- 1
+-01 1
+.names OMUX_B SEL_REG_C O3_REG_C O3_MUX_C
+11- 1
+-01 1
+.names OMUX_C SEL_REG_C O2_REG_C [705] O2_MUX_C
+-01- 1
+1--1 1
+.names OMUX_D SEL_REG_C O1_REG_C [705] O1_MUX_C
+-01- 1
+1--1 1
+.names OMUX_E SEL_REG_C O0_REG_C [705] O0_MUX_C
+-01- 1
+1--1 1
+.names 4_MUX_4 0_MUX_0 SEL_REG_C [687] [693] [697] [704] OU
+0---10- 1
+1-1001- 1
+110-0-0 1
+.names OUT_O AND_OUT_0 0_MUX_0 [704] [663]
+-0-- 1
+0-0- 1
+0--1 1
+.names IN OUT [684]
+1- 1
+-1 1
+.names SEC0 LatchOut_v5 [685]
+1- 1
+-0 1
+.names 1_MUX_1 0_MUX_0 [686]
+1- 1
+-1 1
+.names 2_MUX_2 [686] [687]
+1- 1
+-1 1
+.names SBARRA_IN 0_MUX_0 [689]
+0- 1
+-0 1
+.names L LatchOut_v6 [691]
+00 1
+.names ERROR OUT_O [693]
+1- 1
+-1 1
+.names 2_MUX_2 1_MUX_1 [694]
+0- 1
+-0 1
+.names 3_MUX_3 [687] [697]
+1- 1
+-1 1
+.names SETTORE_B SETTORE_C [698]
+0- 1
+-0 1
+.names IN OUT [700]
+0- 1
+-0 1
+.names IN_O OUT_O [701]
+1- 1
+-1 1
+.names 3_MUX_3 [694] [704]
+0- 1
+-1 1
+.names OMUX_A OMUX_B SEL_REG_C [705]
+0-1 1
+-01 1
+.names LatchOut_v6 [684] [706]
+01 1
+.end

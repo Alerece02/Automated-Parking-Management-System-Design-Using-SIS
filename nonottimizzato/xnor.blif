@@ -1,0 +1,14 @@
+.model xnor
+.inputs A B
+.outputs O
+
+#eseguo le tabelle di verita
+.subckt xor A=A B=B O=NOR_OUT
+.subckt not A=NOR_OUT O=O
+
+.end
+
+#importo le porte logiche
+.search xor.blif           
+.search not.blif
+   

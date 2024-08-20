@@ -1,0 +1,16 @@
+.model register5
+.inputs I4 I3 I2 I1 I0
+.outputs O4 O3 O2 O1 O0
+
+#uso 5 registri da 1 bit
+.subckt register1 I=I4 O=O4
+.subckt register1 I=I3 O=O3
+.subckt register1 I=I2 O=O2
+.subckt register1 I=I1 O=O1
+.subckt register1 I=I0 O=O0
+
+.end
+
+# Importa register 1 bit
+.search register1.blif
+

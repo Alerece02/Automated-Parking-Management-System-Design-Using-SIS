@@ -1,0 +1,12 @@
+.model demux
+.inputs S I
+.outputs O1 O0
+
+.names S I O1
+01 1
+
+.names S I O0
+11 1
+
+.end
+

@@ -1,0 +1,19 @@
+.model adder5
+.inputs A4 A3 A2 A1 A0 B4 B3 B2 B1 B0 CIN 
+.outputs O4 O3 O2 O1 O0 COUT 
+
+#uso 5 sommatori da a bit l'uno
+.subckt adder1 A=A0 B=B0 CIN=CIN O=O0 COUT=C0 
+.subckt adder1 A=A1 B=B1 CIN=C0 O=O1 COUT=C1 
+.subckt adder1 A=A2 B=B2 CIN=C1 O=O2 COUT=C2
+.subckt adder1 A=A3 B=B3 CIN=C2 O=O3 COUT=C3
+.subckt adder1 A=A4 B=B4 CIN=C3 O=O4 COUT=COUT 
+
+.end
+
+#richiedo la librerie del adder da 1 bit
+.search adder1.blif
+
+
+
+
